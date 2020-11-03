@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      display: none;
+    }
+  </style>
+  <body>
+    <form action="" id="che">
+      <input type="checkbox" />1 <input type="checkbox" />2
+      <input type="checkbox" />3
+    </form>
+    <div id="hh">
+      <div class="container">1</div>
+      <div class="container">2</div>
+      <div class="container">3</div>
+    </div>
+
+    <script>
+      var int = document.getElementsByTagName("input");
+      var con = document.getElementsByClassName("container");
+      var hh = document.getElementById("hh");
+      for (var i = 0; i < int.length; i++) {
+        int[i].index = i;
+
+        int[i].onclick = function () {
+          if (this.checked) {
+              console.log(i)
+            // console.log(this.index);
+            con[this.index].style.display = "block";
+          } else {
+            con[i].style.display = "none";
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
