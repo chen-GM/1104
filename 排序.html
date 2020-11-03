@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 选择排序
+      var example = [8, 94, 15, 88, 55, 76, 21, 39];
+      // console.log(example.length)
+      function get(arr) {
+        for (var i = 0; i < example.length; i++) {
+          for (var j = i + 1; j < example.length; j++) {
+            if (arr[i] > arr[j]) {
+              temp = arr[j];
+              arr[j] = arr[i];
+              arr[i] = temp;
+            }
+          }
+        }
+        return arr;
+      }
+
+      //   冒泡排序
+      function geter(arr) {
+        for (var i = 1; i < arr.length ; i++) {
+          // 内层循环,控制比较的次数，并且判断两个数的大小
+          for (var j = 0; j < arr.length ; j++) {
+            // 白话解释：如果前面的数大，放到后面(当然是从小到大的冒泡排序)
+            if (arr[j] > arr[j + 1]) {
+              var temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+        return arr
+      }
+
+      console.log(geter(example));
+    </script>
+  </body>
+</html>
